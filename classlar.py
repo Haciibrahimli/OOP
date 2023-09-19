@@ -154,7 +154,9 @@
 # print(dog)
 # class Person:
 #     pass          
-# bütün tapşırıqları işləyərkən çalışın, metodlar yazın öz təxəyyülünüzə uyğun, təkcə atributlarla yetinməyin. Metodlar önəmlidir.
+#bütün tapşırıqları işləyərkən çalışın, metodlar yazın öz təxəyyülünüzə uyğun, təkcə atributlarla yetinməyin. Metodlar önəmlidir.
+# 
+
 # 1. Bir Electronics class-ı yaradın. Ona name və power
 #    atributları verin. Daha sonra ondan törəmə olan 2 class yaradın. 
 #    Birinin adı HomeElectronics olsun, digərinin adı isə WorkElectronics olsun.
@@ -167,7 +169,7 @@
 #         self.name = name
 #         self.power = power
 #     def show_power(self):
-#         return "this is power"
+#         retur self.power 
 
 # class HomeElectronics(Electronics):
 #     def __init__(self, name, power,colour,model):
@@ -175,9 +177,6 @@
 #         self.colour = colour
 #         self.model = model
 
-#     def show_power(self):
-#         return "this is power"
-    
 # tv = HomeElectronics(name = "samsung",power = "123",colour = "black",model = "m2w45")
 # tosser = HomeElectronics(name = "unknown",power="125",colour = "red",model = "S21")
 
@@ -185,8 +184,7 @@
 #     def __init__(self, name, power,year):
 #         super().__init__(name, power)
 #         self.year = year
-#     def show_power(self):
-#         return "this is power"
+# 
 # notebook = WorkElectronics(name = "macbook",power = "222",year = "2023")
 # phone = WorkElectronics(name = "nokia",power = "1011",year = "2023")
 
@@ -197,19 +195,52 @@
 #    Triangle, Circle classları olsun. Atributları və metodları 
 #    öz düşüncənizə uyğun yazın. (Polimorfizm anlayışından istifadə edin.)
 
-# class Area:
-#     def __init__(self,num):
-#         self.num = num
-# class Square(Area):
-#     def __init__(self, num):
-#         super().__init__(num)
+# class Figure:
+#     def __init__(self, side):
+#         self.side = side
+#
+#     def __str__(self):
+#         self.side
 
-# class Triangle:
-#     def __init__(self,num):
-#         super().__init__(num)
-# class Circle:
-#     def __init__(self,num):
-#         super().__init__(num)
+# class Square(Figure):
+#     def __init__(self, side):
+#         super().__init__(side)
+#
+#     def perimeter(self):
+#         return self.side * 4
+#
+#     def area(self):
+#         return self.side ** 2
+#
+# class Triangle(Figure):
+#     def __init__(self, side, side2, side3, height):
+#         super().__init__(side)
+#         self.height = height
+#         self.side2 = side2
+#         self.side3 = side3
+#
+#     def __str__(self):
+#         return self.height
+#
+#     def perimeter(self):
+#         return self.side + self.side2 + self.side3
+#
+#     def area(self):
+#         return (1 / 2) * self.side * self.height
+#
+# class Circle(Figure):
+#     def __init__(self, side, pi):
+#         super().__init__(side)
+#         self.pi = 3.14
+#
+#     def __str__(self):
+#         return self.side
+#
+#     def area(self):
+#         return self.pi * self.side ** 2
+#
+#     def length(self):
+#         return 2*self.pi*self.side
         
 
 # 3. Bir class yaradın. Bu classın sadəcə num deyə bir atributu olsun. 
@@ -221,18 +252,18 @@
 #         self.num = num
 
 #     def calculator(self):  
-#         return self.num 
-#     def User(self,user):  
-#         self.user = user
-#         return self.user * self.num
-# user = int(input("Enter the number "))
-
-# print(user())
-    
+#         user = int(input("ededi daxil edin: "))
+#         return self.num * user
+# obj1 = New(num = 2)
+# print(obj1.calculator())
+       
+ 
 # 4. Bir Animal class-ı yazın. Age, color, feet deyə atributları olsun. 
 #    Daha sonra bu class-ı daxil olduğu moduldan başqa bir modula daxil
 #    edərək törəmə bir Cat class-ı yaradın. 
 #    Daha sonra Cat class-ının bir obyektini yaradın.
+
+
 # class Animal:
 #     def __init__(self,Age,color,feet):
 #         self.Age = Age
@@ -246,7 +277,7 @@
 
 # cat1 = Cat(age=3, color="Yellow", feet=4)
 # print(cat1.Age)
-#
+# #
 
 # 5. Travel deyə bir class yaradın. direction, price kimi atributları olsun.
 #    Daha sonra BusTravel, FlyTravel kimi törəmə siniflər yaradın. 
@@ -256,7 +287,11 @@
 #     def __init__(self,direction,price):
 #         self.direction = direction
 #         self.price = price
+#     def __str__(self):
 #         return self.direction + " " + self.price
+# flight = Travel(direction = "dubai",price = "233")
+# print(f"direction:{flight.direction} \n price:{flight.price}")
+
 # class BusTravel(Travel):
 #     def __init__(self, direction, price,breaktime):
 #         super().__init__(direction, price)
@@ -283,29 +318,40 @@
 #     def __init__(self,age,color):
 #         self.age = age
 #         self.color = color
+
+#     def __str__(self):
 #         return self.age + " " + self.color
+    
 # class Mammals(Animal):
 #     def __init__(self, age, color,price):
 #         super().__init__(age, color)
 #         self.price = price
+#     def __str__(self):
 #         return self.price
     
 # class Cow(Mammals):
+
 #     def __init__(self, age, color, price,weight):
 #         super().__init__(age, color, price)
 #         self.weight = weight
+#     def __str__(self):
 #         return self.weight
-    
+#     def animalsound(self):          #--->#metod
+#         return " moo "
+# holland = Cow(age = "2",color = "red",price = "1899",weight = "200") #-->obyekt
+
 # class NonMammals(Animal):
 #     def __init__(self, age, color,country):
 #         super().__init__(age, color)
 #         self.country = country
+#     def __str__(self):
 #         return self.country
     
 # class Snake(NonMammals):
 #     def __init__(self, age, color, country,length):
 #         super().__init__(age, color, country)
 #         self.length = length
+#     def __str__(self):
 #         return self.length
      
 # 7. Car deyə bir class yaradın. Marka, model, year, color 
@@ -319,7 +365,10 @@
 #         self.model = model
 #         self.year = year
 #         self.color = color
-    
+#     def __str__(self):
+#         return self.marka 
+# carclub = Car(marka = "unknown",model = "notused",year = "0km",color = "mix")
+
 # class sport(Car):
 #     def __init__(self, marka, model, year, color,maxspeed):
 #         super().__init__(marka, model, year, color)
@@ -344,7 +393,6 @@
 
 # print(car2.marka)
 
-# burda mes maxspeed niya car 3 olan class  aid olur
 
 # 8. MyCard deyə bir class yaratmalısınız. username, balance, pin_code 
 #    atributlarını verin. Daha sonra get_cash() deyə bir metod yaradın, 
@@ -358,3 +406,85 @@
 #    Əgər daxil edilənlərdən hamısı rəqəmdirsə və 16 rəqəmlidirsə,
 #    köçürüləcək məbləği istəyin. Köçürüləcək məbləğ balansdan çox olmadığı 
 #    təqdirdə balansdan həmin məbləği çıxın və "Uğurlu köçürülmə" return etsin.
+
+
+
+# class MyCard:
+#     def __init__(self, username, balance, pin_code, quantity):
+#         self.username = username
+#         self.balance = balance
+#         self.pin_code = pin_code
+#         self.quantity = quantity
+#
+#     def __str__(self):
+#         return f"{self.username}/{self.balance}"
+#
+#     def get_cash(self):
+#
+#         if self.quantity <= self.balance:
+#             pin_code = input("Enter the pin code: ")
+#             if pin_code == self.pin_code:
+#                 self.balance = self.balance - self.quantity
+#                 return f"Success, balance: {self.balance}"
+#             else:
+#                 return "Pin code is wrong"
+#         else:
+#             return "Balance is not enough to out"
+#
+#     def in_cash(self):
+#         pin_code = input("Enter the pin code: ")
+#         if pin_code == self.pin_code:
+#             self.balance += self.quantity
+#             return f"Success, balance: {self.balance}"
+#         else:
+#             return "Wrong pin code"
+#
+#     def send_money(self):
+#         card_number = input("Enter the 16 numbers of your card: ")
+#         if card_number.isdigit():
+#             if len(card_number) == 16:
+#                 send_money = int(input("Enter value: "))
+#                 if send_money <= self.balance:
+#                     self.balance -= send_money
+#                     return f"Success, balance:{self.balance}"
+#
+#                 else:
+#                     return "Not enough balance"
+#             else:
+#                 return "Card numbers are wrong"
+#         else:
+#             return "Card numbers are wrong(has alphabetic elements)"
+# card1 = MyCard(username="intigam", balance=15, pin_code="1234", quantity=20)
+# print(card1.get_cash())
+# print(card1.in_cash())
+# print(card1.send_money())
+
+
+# 1. Bir Animals classı yaradın. Ona sound(), age_increaser() 
+#    metodları verin. Age, color, weight atributları verin. 
+#    Daha sonra hər bir atributu və metodu həm public həm private 
+#    həmdə protected edin. Və fərqlərini aydınlaşdırın.
+
+
+# class Animal:
+#     def __init__(self,age,color,weight) -> None:
+#         self.__age = age
+#         self.__color = color
+#         self.__weight = weight
+#     def __str__(self):
+#         return self.__age
+#     def sound(self):
+#         return self.__weight
+#     def age_increaser(self):
+#         return self.__age 
+#     def color(self):
+#         return self.__color
+# obj1 = Animal(age = "5",color = "white",weight = "199")
+# print(obj1)
+    
+
+    
+    
+
+
+    
