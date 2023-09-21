@@ -482,6 +482,65 @@
 # obj1 = Animal(age = "5",color = "white",weight = "199")
 # print(obj1)
     
+# user = input("ededi daxil edin:")
+# cem = 0
+# for i in user:
+#     cem +=int(i)
+# print(cem)
+# 48. Daxil edilən ədədin rəqəmləri cəmini hesablayan funksiya yazın. (Python)
+
+# user = input("ededi daxil edin:")
+# cem = 0
+# for i in user:
+#     cem +=int(i)
+# print(cem)
+
+# 49. HTMLdə bir cədvəl düzəldin, ad, soyad, yaş, ailə vəziyyəti qeyd olunsun. (HTML)
+
+
+# 50. Car, ClassicCars, SportCars class-ları üzərində 
+# hamısında ən az 2 metod və 2 atribut yazın, həmçinin polimorfizm və
+# inheritance anlayışlarını tətbiq edin.
+
+# class Car:
+#     def __init__(self, color, year):
+#         self.color = color 
+#         self.year = year
+#     def __str__(self):
+#         return self.color
+# carclub = Car(color = "----",year = "----")
+
+# class SportCars(Car):
+#     def __init__(self,year, color, maxspeed):
+#         super().__init__(year, color)
+#         self.maxspeed = maxspeed
+#     def Carpower(self):
+#         return self.maxspeed
+        
+# car1 = SportCars(year = "1976",color = "red",maxspeed = "320")
+   
+# class ClassicCars(Car):
+#     def __init__(self, model, year, color,power):
+#         super().__init__(self, year, color)
+#         self.power = power
+#         self.model = model
+#     def Carpower(self):
+#         return self.power
+       
+# car2 = ClassicCars(model = "Sclass",year = "1967" ,color = "white",power = "340hp")    
+
+# print(car2) #--burda sehv hardadir onun zehmet olmasa deyersiz--#
+
+        
+
+# 51. Daxil edilən 2 ədəd arasındakı ədədlərin ASCİİ qarşılıqlarını bir list-ə
+# əlavə edən funksiya yazın.
+
+# soz = input("sozu daxil edin:" )
+# mylist = []
+# for i in soz:
+#  mylist.append(ord(i))
+# print(mylist)
 
     
     
