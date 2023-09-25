@@ -487,6 +487,7 @@
 # for i in user:
 #     cem +=int(i)
 # print(cem)
+
 # 48. Daxil edilən ədədin rəqəmləri cəmini hesablayan funksiya yazın. (Python)
 
 # user = input("ededi daxil edin:")
@@ -512,34 +513,40 @@
 
 # class SportCars(Car):
 #     def __init__(self,year, color, maxspeed):
-#         super().__init__(year, color)
+#         super().__init__(color,year)
 #         self.maxspeed = maxspeed
 #     def Carpower(self):
 #         return self.maxspeed
+#     def __str__(self):
+#         return self.color
         
 # car1 = SportCars(year = "1976",color = "red",maxspeed = "320")
    
 # class ClassicCars(Car):
-#     def __init__(self, model, year, color,power):
-#         super().__init__(self, year, color)
+#     def __init__(self, color, year,model,power):
+#         super().__init__(color,year)
 #         self.power = power
 #         self.model = model
 #     def Carpower(self):
 #         return self.power
+#     def __str__(self):
+#         return self.power
        
-# car2 = ClassicCars(model = "Sclass",year = "1967" ,color = "white",power = "340hp")    
+# car2 = ClassicCars(color = "white",year = "1967" ,model = "Sclass",power = "340hp")    
 
-# print(car2) #--burda sehv hardadir onun zehmet olmasa deyersiz--#
+# print(car1) #--burda sehv hardadir onun zehmet olmasa deyersiz--#
 
-        
+#            super().__init__(self,color,year)
+# TypeError: Car.__init__() takes 3 positional arguments but 4 were given
 
 # 51. Daxil edilən 2 ədəd arasındakı ədədlərin ASCİİ qarşılıqlarını bir list-ə
 # əlavə edən funksiya yazın.
 
-# soz = input("sozu daxil edin:" )
+# eded1 = int(input("sozu daxil edin:" ))
+# eded2 = int(input("sozu daxil edin:" ))
 # mylist = []
-# for i in soz:
-#  mylist.append(ord(i))
+# for i in range(eded1,eded2+1):
+#  mylist.append(chr(i))
 # print(mylist)
 
     
